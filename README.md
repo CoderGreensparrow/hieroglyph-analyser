@@ -51,8 +51,22 @@ But the ultimate goal of the project is to create an Aesthetic arranger that has
 
 *On that note however: it can be true that scribes from different time periods, from different kingdoms had different defitions of "aesthetically arranging hieroglyphs", and this could be reflected in the program as *multiple seperate rulesets for different eras*, if such a requirement is made by the egyptologist community.
 
-### How to use the software (aka. exact software specification)
+### How to use the software (aka. exact software specification; easier read)
 
 #### Transliterating egyptian characters
 
 TODO
+
+### Exact implementation (computer science oriented text)
+
+#### Rendering egyptian characters
+
+Unless I use some external tool for rendering, I have to build one myself. There are a few ideas:
+- HTML with flexboxes for quadrats
+- Using \<canvas\>
+  - svg, png, jpeg rendering (or any other format)
+- Unicode text with Egyptian Hieroglyph Format Controls*
+- And the non-rendering option: JSesh-style MdC transliteration (this should be directly pastable into JSesh and should work)
+
+*As the [eglyf](https://github.com/kbinani/eglyf) project writes: "Egyptian Hieroglyph Format Controls (U+13430–U+1343F) are Unicode characters that specify the layout of hieroglyphic text. While these controls are defined in the Unicode standard, they typically require specialized software to be interpreted correctly."
+Nevertheless, since some fonts that support them *do* exist (the linked project tries to make the fonts that don't support them actually start supporting them), one of the rendering options will be simply UTF-8 text with format control characters.
